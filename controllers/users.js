@@ -66,7 +66,7 @@ exports.loginUser = async (req, res, next) => {
       : false;
 
     if (!isPasswordCorrect) {
-      return res.status(401).send({ message: "Invalid Credentials" });
+      return res.status(401).json({ message: "Wrong password" });
     }
 
     const userInformation = createUnsecuredUserInformation(user);

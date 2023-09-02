@@ -27,8 +27,8 @@ if (process.env.NODE_ENV === "development") {
 app.use("/api/v1/users", users);
 app.use("/api/v1/difficulties", difficulties);
 app.use("/api/v1/scores", scores);
-app.get("/", (req, res) => {
-  res.send("Success");
+app.get("/api/v1", (req, res, next) => {
+  res.json({ success: true });
 });
 
 const server = app.listen(
