@@ -41,6 +41,7 @@ exports.createUser = async (req, res, next) => {
     const hashedPassword = await encryptPassword(req.body.password);
     const user = await User.create({
       ...req.body,
+      createAt: Date.now(),
       password: hashedPassword,
     });
     console;
